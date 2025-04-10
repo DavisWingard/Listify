@@ -55,7 +55,7 @@ app.get(
   }
 );
 
-const PORT = process.env.PORT || 8888;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server open on port ${PORT}`);
 });
