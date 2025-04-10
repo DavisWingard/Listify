@@ -245,21 +245,4 @@ function App() {
   );
 }
 
-// OLD TESTING METHOD
-// const testSimilarTracks = async () => {
-//   const trackName = selectedTrack.name;
-//   const artistName = selectedTrack.artists[0]?.name;
-
-//   const similarTracks = await getSimilarTracksFromLastFm(
-//     trackName,
-//     artistName
-//   );
-
-//   console.log(`Similar tracks for: ${trackName} — ${artistName}`);
-//   similarTracks.forEach((track: any, i: number) => {
-//     console.log(`${i + 1}. ${track.name} — ${track.artist.name}`);
-//   });
-//   console.log("hi");
-// };
-
 export default App;
