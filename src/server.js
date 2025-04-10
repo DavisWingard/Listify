@@ -51,8 +51,7 @@ app.get(
 
     const accessToken = req.user.accessToken;
     console.log("Access Token Retrieved:", accessToken);
-    res.redirect(`listify-theta.vercel.app
-?access_token=${accessToken}`);
+    res.redirect(`https://listify-theta.vercel.app?access_token=${accessToken}`);
   }
 );
 
