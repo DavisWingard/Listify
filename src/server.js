@@ -12,7 +12,7 @@ passport.use(
     {
       clientID: process.env.SPOTIFY_CLIENT_ID,
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-      callbackURL: "http://localhost:8888/auth/spotify/callback",
+      callbackURL: "https://listify-9nxj.onrender.com/auth/spotify/callback",
     },
     (accessToken, refreshToken, profile, done) => {
       const user = {
@@ -31,7 +31,12 @@ app.use(passport.initialize());
 app.get(
   "/auth/spotify",
   passport.authenticate("spotify", {
-    scope: ["user-read-private", "user-read-email", "playlist-modify-public", "playlist-modify-private"],
+    scope: [
+      "user-read-private",
+      "user-read-email",
+      "playlist-modify-public",
+      "playlist-modify-private",
+    ],
     showDialog: true,
   })
 );
@@ -46,7 +51,8 @@ app.get(
 
     const accessToken = req.user.accessToken;
     console.log("Access Token Retrieved:", accessToken);
-    res.redirect(`http://localhost:5173?access_token=${accessToken}`);
+    res.redirect(`listify-theta.vercel.app
+?access_token=${accessToken}`);
   }
 );
 
