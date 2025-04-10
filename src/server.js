@@ -1,4 +1,5 @@
 import passport from "passport";
+import express from "express";
 import { Strategy as SpotifyStrategy } from "passport-spotify";
 import dotenv from "dotenv";
 
