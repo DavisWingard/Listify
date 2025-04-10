@@ -54,3 +54,8 @@ app.get(
     res.redirect(`https://listify-theta.vercel.app?access_token=${accessToken}`);
   }
 );
+
+const PORT = process.env.PORT || 8888;
+app.listen(PORT, () => {
+  console.log(`Server open on port ${PORT}`);
+});
