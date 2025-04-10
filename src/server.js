@@ -54,7 +54,3 @@ app.get(
     res.redirect(`https://listify-theta.vercel.app?access_token=${accessToken}`);
   }
 );
-
-app.listen(8888, () => {
-  console.log("Server open - http://localhost:8888");
-});
