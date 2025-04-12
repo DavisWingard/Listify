@@ -2,10 +2,19 @@ import passport from "passport";
 import express from "express";
 import { Strategy as SpotifyStrategy } from "passport-spotify";
 import dotenv from "dotenv";
+import session from "express-session";
 
 dotenv.config();
 
 const app = express();
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 passport.use(
   new SpotifyStrategy(
