@@ -67,7 +67,6 @@ function App() {
     trackName: string,
     artistName: string
   ) => {
-
     // if any recruiters are reading this line im really good at not exposing API keys :)
     const apiKey = import.meta.env.VITE_LASTFM_APIKEY;
 
@@ -183,28 +182,28 @@ function App() {
         console.error("Error adding tracks to playlist:", error);
       }
     }, 100);
-    setIsGenerating(false)
+    setIsGenerating(false);
   };
 
   return (
     <>
-      <div className="text-spotifygreen text-4xl">
-        Welcome to Listify!
-      </div>
+      <div className="text-spotifygreen text-4xl">Welcome to Listify!</div>
       <div className="flex justify-end p-5">
         <Button variant="outline" onClick={authenticate}>
           Sign in to Spotify
         </Button>
       </div>
       <div>
-        <Textarea className="mb-4"
+        <Textarea
+          className="mb-4 text-white"
           placeholder="Search for a song."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
       <div>
-        <Button className="mb-4 bg-white text-black"
+        <Button
+          className="mb-4 bg-white text-black"
           onClick={async () => {
             setIsGenerating(true);
             if (selectedTrack) {
@@ -223,11 +222,22 @@ function App() {
         </Button>
       </div>
       <div>
-        <ul>
+        <ul className="text-white">
           {tracks.map((track) => (
-            <li key={track.id} onClick={() => selectTrack(track)}>
+            <li
+              key={track.id}
+              onClick={() => setSelectedTrack(track)}
+              className={`cursor-pointer p-2 rounded border transition-all
+              ${
+                selectedTrack?.id === track.id
+                  ? "border-green-500"
+                  : "border-transparent"
+              }
+              hover:border-green-300`}
+            >
               <div className="flex items-center justify-start p-[0.5mm]">
-                <img className="mb-2 mr-2"
+                <img
+                  className="mb-2 mr-2"
                   src={
                     track.album.images?.[0]?.url || track.album.images?.[0]?.url
                   }
