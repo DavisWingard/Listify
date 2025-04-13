@@ -184,6 +184,7 @@ function App() {
       }
     }, 100);
     setIsGenerating(false);
+    setButtonText("Generate Playlist");
   };
 
   return (
