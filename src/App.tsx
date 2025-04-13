@@ -188,6 +188,9 @@ function App() {
 
   return (
     <>
+      <div className="text-spotifygreen text-4xl">
+        Welcome to Listify!
+      </div>
       <div className="flex justify-end p-5">
         <Button variant="outline" onClick={authenticate}>
           Sign in to Spotify
@@ -201,7 +204,7 @@ function App() {
         />
       </div>
       <div>
-        <Button className="mb-4"
+        <Button className="mb-4 bg-white text-black"
           onClick={async () => {
             setIsGenerating(true);
             if (selectedTrack) {
