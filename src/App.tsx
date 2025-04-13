@@ -204,7 +204,7 @@ function App() {
       </div>
       <div>
         <Button
-          className="mb-4 bg-white text-black hover:bg-white hover:text-black sm:text-xs"
+          className="mb-4 bg-white text-black hover:bg-white hover:text-black text-sm sm:text-base"
           onClick={async () => {
             setIsGenerating(true);
             if (selectedTrack) {
