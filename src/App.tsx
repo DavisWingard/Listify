@@ -189,7 +189,7 @@ function App() {
 
   return (
     <>
-      <div className="flex justify-end p-5">
+      <div className="flex justify-end p-4 text-xs sm:text-base">
         <Button variant="outline" onClick={authenticate}>
           Sign in to Spotify
         </Button>
@@ -235,7 +235,7 @@ function App() {
         </Button>
       </div>
       <div>
-        <ul className="text-white">
+        <ul className="text-white text-xs sm:text-base">
           {tracks.map((track) => (
             <li
               key={track.id}
