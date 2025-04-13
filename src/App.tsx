@@ -188,12 +188,12 @@ function App() {
 
   return (
     <>
-      <div className="text-spotifygreen text-4xl">Welcome to Listify!</div>
       <div className="flex justify-end p-5">
         <Button variant="outline" onClick={authenticate}>
           Sign in to Spotify
         </Button>
       </div>
+      <div className="text-spotifygreen text-4xl">Welcome to Listify!</div>
       <div>
         <Textarea
           className="mb-4 text-white"
