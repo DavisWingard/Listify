@@ -239,7 +239,7 @@ function App() {
             <li
               key={track.id}
               onClick={() => selectTrack(track)}
-              className={`rounded cursor-pointer transition-all text-lg
+              className={`rounded cursor-pointer transition-all text-xl
               ${
                 selectedTrack?.id === track.id
                   ? "border border-spotifygreen"
