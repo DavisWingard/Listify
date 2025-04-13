@@ -226,13 +226,13 @@ function App() {
           {tracks.map((track) => (
             <li
               key={track.id}
-              onClick={() => setSelectedTrack(track)}
-              className={`cursor-pointer p-2 rounded border transition-all
+              onClick={() => selectTrack(track)}
+              className={`rounded cursor-pointer transition-all 
               ${
                 selectedTrack?.id === track.id
-                  ? "border-green-500"
-                  : "border-transparent"
-              }
+                  ? "border border-green-500"
+                  : "border border-transparent"
+              } 
               hover:border-green-300`}
             >
               <div className="flex items-center justify-start p-[0.5mm]">
