@@ -9,6 +9,7 @@ function App() {
   const [tracks, setTracks] = useState<any[]>([]);
   const [selectedTrack, setSelectedTrack] = useState<any | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [buttonText, setButtonText] = useState("Generate Playlist");
 
   useEffect(() => {
     // access token handoff and storage
@@ -207,10 +208,23 @@ function App() {
           onClick={async () => {
             setIsGenerating(true);
             if (selectedTrack) {
+              setIsGenerating(true);
+              setButtonText(
+                "Playlist is generating. You will be redirected automatically."
+              );
               const similarTracks = await getSimilarTracksFromLastFm(
                 selectedTrack.name,
                 selectedTrack.artists[0].name
               );
+
+              if (similarTracks.length === 0) {
+                setButtonText(
+                  "Hmm, we don't know that song. Try something else."
+                );
+                setIsGenerating(false);
+                return;
+              }
+
               createPlaylist(similarTracks);
             }
           }}
@@ -219,6 +233,7 @@ function App() {
           {isGenerating
             ? "Playlist is generating. You will be redirected automatically."
             : "Generate Playlist"}
+          {buttonText}
         </Button>
       </div>
       <div>
