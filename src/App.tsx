@@ -226,7 +226,6 @@ function App() {
               }
 
               createPlaylist(similarTracks);
-              setIsGenerating(false);
             }
           }}
           disabled={!selectedTrack || isGenerating}
