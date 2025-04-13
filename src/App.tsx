@@ -204,7 +204,7 @@ function App() {
       </div>
       <div>
         <Button
-          className="mb-4 bg-white text-black"
+          className="mb-4 bg-white text-black hover:bg-white hover:text-black"
           onClick={async () => {
             setIsGenerating(true);
             if (selectedTrack) {
@@ -242,10 +242,10 @@ function App() {
               className={`rounded cursor-pointer transition-all 
               ${
                 selectedTrack?.id === track.id
-                  ? "border border-green-500"
+                  ? "border border-spotifygreen"
                   : "border border-transparent"
               } 
-              hover:border-green-300`}
+              hover:border-spotifygreen`}
             >
               <div className="flex items-center justify-start p-[0.5mm]">
                 <img
