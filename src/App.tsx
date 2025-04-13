@@ -189,8 +189,8 @@ function App() {
 
   return (
     <>
-      <div className="flex justify-end p-4 text-xs sm:text-base">
-        <Button variant="outline" onClick={authenticate}>
+      <div className="flex justify-end p-4">
+        <Button className="text-xs sm:text-base" variant="outline" onClick={authenticate}>
           Sign in to Spotify
         </Button>
       </div>
@@ -235,12 +235,12 @@ function App() {
         </Button>
       </div>
       <div>
-        <ul className="text-white text-xs sm:text-base">
+        <ul className="text-white">
           {tracks.map((track) => (
             <li
               key={track.id}
               onClick={() => selectTrack(track)}
-              className={`rounded cursor-pointer transition-all text-xl
+              className={`rounded cursor-pointer transition-all text-xs sm:text-xl
               ${
                 selectedTrack?.id === track.id
                   ? "border border-spotifygreen"
