@@ -230,9 +230,6 @@ function App() {
           }}
           disabled={!selectedTrack || isGenerating}
         >
-          {isGenerating
-            ? "Playlist is generating. You will be redirected automatically."
-            : "Generate Playlist"}
           {buttonText}
         </Button>
       </div>
