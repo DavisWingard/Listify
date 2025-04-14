@@ -190,7 +190,11 @@ function App() {
   return (
     <>
       <div className="flex justify-end p-4">
-        <Button className="text-xs sm:text-base" variant="outline" onClick={authenticate}>
+        <Button
+          className="text-xs sm:text-base"
+          variant="outline"
+          onClick={authenticate}
+        >
           Sign in to Spotify
         </Button>
       </div>
@@ -248,8 +252,9 @@ function App() {
               } 
               hover:border-spotifygreen`}
             >
-              <div className="flex justify-start p-2 ml-4">
+              <div className="flex items-center justify-start p-2">
                 <img
+                  className="mr-4"
                   src={
                     track.album.images?.[0]?.url || track.album.images?.[0]?.url
                   }
