@@ -248,9 +248,8 @@ function App() {
               } 
               hover:border-spotifygreen`}
             >
-              <div className="flex items-center justify-start p-[0.5mm]">
+              <div className="flex items-center justify-start p-2">
                 <img
-                  className="mb-2 mr-2"
                   src={
                     track.album.images?.[0]?.url || track.album.images?.[0]?.url
                   }
