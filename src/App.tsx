@@ -199,7 +199,7 @@ function App() {
           Sign in to Spotify
         </Button>
       </div>
-      <div className="text-spotifygreen text-4xl mb-4">Welcome to Listify!</div>
+      <div className="text-spotifygreen text-4xl mb-8">Welcome to Listify!</div>
       <div>
         <Textarea
           className="mb-4 text-white"
