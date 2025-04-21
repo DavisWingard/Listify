@@ -5,6 +5,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
+  // state hooks
   const [query, setQuery] = useState("");
   const [tracks, setTracks] = useState<any[]>([]);
   const [selectedTrack, setSelectedTrack] = useState<any | null>(null);
@@ -152,7 +153,7 @@ function App() {
     // convert similarTracks playlist to spotify URIs to seed into playlist
     const uris: string[] = [];
     for (const track of similarTracks) {
-      if (uris.length >= 100) break; // ✅ Stop if you have 100 URIs
+      if (uris.length >= 100) break;
       const uri = await getSpotifyTrackUri(
         track.name,
         track.artist.name,
